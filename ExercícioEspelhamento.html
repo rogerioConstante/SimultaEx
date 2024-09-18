@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espelhamento de Simultaneidades</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #c0d0b5;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        .simultaneidade, .notas, .verificar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+        .simultaneidade button, .notas button, .verificar button, .dificuldade select {
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .notas button {
+            margin: 0px 0px;
+            padding: 0px 1px;
+            width: 130px;
+            height: 25px;
+        }
+        .selected {
+            background-color: #a0a0a0;
+            color: red;
+        }
+         .resultado-simultaneidade {
+            font-family: Arial, sans-serif;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        #cronometro {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+        }
+        /* Media query for mobile devices */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .simultaneidade button, .notas button, .verificar button, .dificuldade select, .nome input {
+                width: 100%;
+                padding: 5px;
+                font-size: 12px;
+            }
+            .notas button {
+                margin: 0px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script src="script.js"></script>
+    <h1>Espelhamento de Simultaneidades</h1>
+    <div class="nome">
+            <label for="nome-input">Nome:</label>
+            <input type="text" id="nome-input" placeholder="Digite seu nome">
+        </div>
+    <div class="container">
+        <div class="simultaneidade">
+            <label for="nivel-dificuldade">Nível:</label>
+            <select id="nivel-dificuldade">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <button id="simultaneidade-btn">Iniciar</button>
+            <span id="cronometro"></span>
+            <pre id="resultado-simultaneidade" class="resultado-simultaneidade"></pre>
+        </div>
+        <div class="notas">
+            <label for="nota0">Notas:</label>
+            <button class="nota-btn" id="nota0">Dó, Si#</button>
+            <button class="nota-btn" id="nota1">Dó#, Réb</button>
+            <button class="nota-btn" id="nota2">Ré</button>
+            <button class="nota-btn" id="nota3">Ré#, Mib</button>
+            <button class="nota-btn" id="nota4">Mi, Fáb</button>
+            <button class="nota-btn" id="nota5">Fá, Mi#</button>
+            <button class="nota-btn" id="nota6">Fá#, Solb</button>
+            <button class="nota-btn" id="nota7">Sol</button>
+            <button class="nota-btn" id="nota8">Sol#, Láb</button>
+            <button class="nota-btn" id="nota9">Lá</button>
+            <button class="nota-btn" id="nota10">Lá#, Sib</button>
+            <button class="nota-btn" id="nota11">Si, Dób</button>
+        </div>
+        <div class="verificar">
+            <button id="verificar-btn">Verificar</button>
+        </div>
+    </div>
+</body>
+</html>
